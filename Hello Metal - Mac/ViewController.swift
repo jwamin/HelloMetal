@@ -22,7 +22,7 @@ class ViewController: NSViewController {
     
     override func loadView() {
         
-        self.view = MTKView(frame:NSRect(x: 0, y: 0, width: 300, height: 200))
+        self.view = MTKView(frame:NSRect(x: 0, y: 0, width: 700, height: 400))
           print(view.bounds)
         
     }
