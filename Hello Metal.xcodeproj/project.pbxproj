@@ -25,6 +25,7 @@
 /* Begin PBXFileReference section */
 		57419329211764BC00DAC017 /* shader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = shader.metal; sourceTree = "<group>"; };
 		5751E391212510FB00C68903 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/MetalKit.framework; sourceTree = DEVELOPER_DIR; };
+		5751E3932125A51200C68903 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		576EA5332124FBF00068E47E /* Hello Metal - Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hello Metal - Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		576EA5352124FBF00068E47E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		576EA5372124FBF00068E47E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +85,7 @@
 		577B7AD3211758C300A5B21D = {
 			isa = PBXGroup;
 			children = (
+				5751E3932125A51200C68903 /* README.md */,
 				576EA543212501B90068E47E /* SharedMetal.swift */,
 				577B7ADE211758C300A5B21D /* Hello Metal */,
 				576EA5342124FBF00068E47E /* Hello Metal - Mac */,
