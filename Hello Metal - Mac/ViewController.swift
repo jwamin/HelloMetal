@@ -40,6 +40,17 @@ class ViewController: NSViewController {
         renderer.mtkView(metalView, drawableSizeWillChange: metalView.drawableSize)
         (view as! MTKView).delegate = renderer
         // Do any additional setup after loading the view.
+        
+        
+        
+    }
+    
+    override func mouseDown(with event: NSEvent) {
+        renderer.setTouchInProgress(true)
+    }
+    
+    override func mouseUp(with event: NSEvent) {
+        renderer.setTouchInProgress(false)
     }
     
     override var representedObject: Any? {

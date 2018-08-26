@@ -15,14 +15,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
-        print("app del")
-        let viewCOntroller = ViewController()
-        let window = NSWindow(contentViewController: viewCOntroller)
-        //window.frame = NSRect(origin: .zerp, size: CGSize(width: 400, height: 200))
-        let windowController = NSWindowController(window: window)
-        window.makeKeyAndOrderFront(self)
-        windowController.showWindow(window)
-      
+        print("app did finish launching")
+//        let viewCOntroller = ViewController()
+//        let window = NSWindow(contentViewController: viewCOntroller)
+//        //window.frame = NSRect(origin: .zerp, size: CGSize(width: 400, height: 200))
+//        let windowController = NSWindowController(window: window)
+//        window.makeKeyAndOrderFront(self)
+//        windowController.showWindow(window)
+//
         
         
     }

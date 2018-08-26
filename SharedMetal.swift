@@ -86,7 +86,7 @@ class MetalRenderer:NSObject, MTKViewDelegate {
     }
     
     func draw(in view: MTKView) {
-   
+        
         guard let commandBuffer = commandQueue.makeCommandBuffer() else { return }
         guard let passDescriptor = view.currentRenderPassDescriptor else { return }
         guard let encoder = commandBuffer.makeRenderCommandEncoder(descriptor: passDescriptor) else { return }
