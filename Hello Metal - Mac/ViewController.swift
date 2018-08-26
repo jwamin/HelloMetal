@@ -8,6 +8,8 @@
 
 import Cocoa
 import MetalKit
+import ModelIO
+import SceneKit.ModelIO
 
 class ViewController: NSViewController {
     
@@ -41,6 +43,7 @@ class ViewController: NSViewController {
         (view as! MTKView).delegate = renderer
         // Do any additional setup after loading the view.
         
+        loadSCNGraph()
         
         
     }
@@ -59,6 +62,17 @@ class ViewController: NSViewController {
         }
     }
 
+    func loadSCNGraph(){
+        
+        guard let scene = SCNScene(named: "NeXT.scn") else {
+            print("error loading scene")
+            return
+        }
+        let sceneMetalAsset = MDLAsset(scnScene: scene)
+        print(sceneMetalAsset.childObjects(of: MDLMesh.self))
+        
+        
+    }
 
 }
 
