@@ -15,12 +15,15 @@ class ViewController: NSViewController {
     
     ///IDIOT!!!!
     var renderer:MetalRenderer!
+    var device:MTLDevice!
     
     var metalView:MTKView! {
         get{
             return self.view as! MTKView
         }
     }
+    
+    var metalMesh:MTKMesh!
     
     override func loadView() {
         
@@ -36,6 +39,8 @@ class ViewController: NSViewController {
             print("no metal")
             return
         }
+        
+        self.device = device
         
         renderer = MetalRenderer(metalView: metalView, device: device)
         
@@ -68,8 +73,38 @@ class ViewController: NSViewController {
             print("error loading scene")
             return
         }
-        let sceneMetalAsset = MDLAsset(scnScene: scene)
-        print(sceneMetalAsset.childObjects(of: MDLMesh.self))
+        
+       
+        let allocator = MTKMeshBufferAllocator(device: device)
+        let sceneMetalAsset = MDLAsset(scnScene: scene, bufferAllocator: allocator)
+        //print(sceneMetalAsset)
+        //let iomesh = sceneMetalAsset.childObjects(of: MDLMesh.self)[0] as! MDLMesh
+        //print(iomesh.self)
+        
+        
+        
+        do{
+
+            var mtkmesh:[MTKMesh] = []
+            //destructure!!!
+            (_, mtkmesh) = try MTKMesh.newMeshes(asset: sceneMetalAsset, device: device)
+            
+            if let isMesh = mtkmesh.first{
+                
+                 metalMesh = isMesh
+            }
+           
+            for buffer in metalMesh.vertexBuffers{
+                print(buffer.buffer.contents())
+            }
+ 
+        } catch {
+            print(error)
+        }
+        
+        
+       
+        
         
         
     }
